@@ -65,8 +65,8 @@ const Dashboard: React.FC = () => {
             </svg>
 
             <input
-              className="w-full text-[15px] bg-transparent placeholder:text-slate-400 outline-none text-slate-700 text-sm rounded-md pl-10 pr-3 py-2 transition duration-300 ease focus:outline-none focus:border-slate-400 hover:border-slate-300 shadow-sm focus:shadow"
-              placeholder="UI Kits, Dashboards..."
+              className="w-full font-semibold text-[15px] bg-transparent placeholder:text-slate-400 outline-none text-slate-700 text-sm rounded-md pl-10 pr-3 py-2 transition duration-300 ease focus:outline-none focus:border-slate-400 hover:border-slate-300 shadow-sm focus:shadow"
+              placeholder="Search pokemon by name..."
               value={searchValue}
               onChange={(e) => setSearchValue(e.target.value)}
             />
@@ -80,7 +80,7 @@ const Dashboard: React.FC = () => {
             key={pokemon.name}
             className="flex justify-center items-center p-4 bg-gray-300 rounded-lg shadow-lg transform transition duration-300 hover:scale-105 hover:shadow-xl h-fit"
           >
-            <Link to={`/pokemon/${extractPokemonId(pokemon.url)}`}>
+            <Link to={`/pages/pokemon/${extractPokemonId(pokemon.url)}`}>
               <span className="text-lg font-semibold bg-gradient-to-r from-blue-500 to-purple-500 bg-clip-text text-transparent capitalize">
                 {pokemon.name}
               </span>
@@ -91,7 +91,7 @@ const Dashboard: React.FC = () => {
 
       <div className="flex justify-center items-center py-5">
         <div className="flex flex-col items-center">
-          <div className="inline-flex mt-2 xs:mt-0">
+          <div className="inline-flex mt-2 xs:mt-0 mb-2">
             <button
               onClick={handlePrev}
               disabled={!pokemonDetails?.previous}
